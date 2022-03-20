@@ -16,18 +16,20 @@ export default function Button({
   style = {},
   textStyle = {},
   onPress,
+  width = "100%" , 
+  colorText = undefined  
 }) {
 
   if( secondry ){
     style = { backgroundColor : 'transparent' , marginTop : spacing.sm , shadowColor : 'transparent' }
-    textStyle = { color : colors.secondry , fontWeight : '400'}
+    textStyle = { color : colorText || colors.secondry , fontWeight : '400'}
   }else{
     style = intialStyleButton ; 
-    textStyle = intialStyleText 
+    textStyle =  colorText || intialStyleText
   }
       
   const touchableOpacity = ({ pressed }) => {
-    return [{ opacity: pressed ? 0.8 : 1, ...styles.button, ...style }];
+    return [{ opacity: pressed ? 0.8 : 1 , ...styles.button, ...style , width }];
   };
 
   return (
@@ -39,7 +41,6 @@ export default function Button({
 
 const styles = StyleSheet.create({
   button: {
-    width: "100%",
     borderRadius: 5,
     padding: spacing.lg,
     shadowOffset: { width: 0, height: 5 },

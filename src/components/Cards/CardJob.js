@@ -12,7 +12,7 @@ export default function CardJob({ data }) {
   const navigation = useNavigation() ; 
 
   const moveToJob = () => {
-      navigation.navigate("ApplyJob" , { id : 'Hello world'})
+      navigation.navigate("ApplyJob" , { id })
   }
 
   return (

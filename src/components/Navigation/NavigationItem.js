@@ -1,8 +1,9 @@
-import { View, Text , StyleSheet } from 'react-native'
+import { View, Text , StyleSheet , Pressable } from 'react-native'
 import React from 'react'
 import { colors, fontSize, spacing } from '../../utils'
 import { useState } from 'react/cjs/react.development'
 import Icon from 'react-native-vector-icons/Ionicons'
+
 
 export default function NavigationItem({ onPress = () => {} , iconName , name  , size = null , active = false , colorIcon = null  , colorText = null }) {
  
@@ -12,11 +13,11 @@ export default function NavigationItem({ onPress = () => {} , iconName , name  ,
   let setColorActive = isActive ? colors.primary : colors.muted
 
   return (
-    <View style={styles.container} onPress={onPress}>
+    <Pressable style={styles.container} onPress={onPress}>
       { active && <View style={styles.line}></View> }
       <Icon style={styles.icon } name={iconName} size={ size || 23 } color={ colorIcon || setColorActive } />
       <Text style={[styles.name , { color : colorText || setColorActive }]}>{ name } </Text>
-    </View>
+    </Pressable>
   )
 }
 

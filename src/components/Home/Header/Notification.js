@@ -14,6 +14,6 @@ export default function Notification() {
 
 
 const styles = StyleSheet.create({
-    container : { backgroundColor : colors['primary-lighten'][200] , width : 37 , height : 37 , borderRadius : 5  , alignItems : 'center' , justifyContent : 'center' , shadowColor : colors.primary , shadowOffset : { width : 0 , height : 1 } , shadowOpacity : .2 , shadowRadius : 0 } , 
+    container : { backgroundColor : colors['primary-lighten'][200] , width : 37 , height : 37 , borderRadius : 5  , alignItems : 'center' , justifyContent : 'center'} , 
     alert : {} ,
 })

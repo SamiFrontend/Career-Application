@@ -29,9 +29,13 @@ export default function UploadInput({ label, setFile }) {
   const handleDocumentSelection = useCallback( async () => {
     
     let response = await DocumentPicker.getDocumentAsync({});
-    setFile(response) ;
-    setHasFile(true) ;
-    setFileName(response.name)  
+    
+    if( response.type !== "cancel" ){
+      setFile(response) ;
+      setHasFile(true) ;
+      setFileName(response.name)  
+    }
+
   });
 
   const clearFile = () => {

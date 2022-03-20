@@ -26,7 +26,7 @@ export default function HeaderInformation() {
 
 const styles = StyleSheet.create({
     container : {
-      paddingVertical : spacing.md
+      paddingTop : spacing.md
     } , 
     title : {
       fontSize : fontSize['3xl'] , 

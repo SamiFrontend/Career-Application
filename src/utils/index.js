@@ -33,7 +33,7 @@ export const fontSize = {
     bgColor : "#F9FAFE"  ,
     success : "#2dad49",
     bgInput : "#EFF6FC" ,
-    borderColor : "#ddd" , 
+    borderColor : "#ececec" , 
     lightgray : '#f1f1f1'
   }
   

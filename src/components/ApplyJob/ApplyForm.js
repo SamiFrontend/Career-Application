@@ -1,12 +1,13 @@
-import { View, Text, StyleSheet  } from "react-native";
+import { View , Text, StyleSheet , Platform } from "react-native";
 import React from "react";
 import Container from "../UI/Container";
 import { colors, fontSize, spacing } from "../../utils";
 import FormApplyToJob from "../Forms/Apply";
 
 export default function ApplyForm() {
+  
   return (
-    <Container paddingY={0} style={styles.container}>
+    <Container  style={styles.container}>
       <View style={styles.containerForm}>
         <Text
           style={{
@@ -23,11 +24,11 @@ export default function ApplyForm() {
   );
 }
 
+const isAndroid = Platform.OS === "android"
+
 const styles = StyleSheet.create({
-  contianer: { flex: 1, paddingTop: 50 } ,
+  contianer: { flex: 1, paddingTop: 50  } ,
   containerForm : {
-      paddingBottom : 450 , 
-      flex : 1 ,
-      minHeight : "100%"
+      paddingBottom : isAndroid ? 80 : 20  , 
   }
 });

@@ -5,9 +5,9 @@ import { colors, fontSize, spacing } from '../../utils'
 
 export default function Section({ text , title }) {
   return (
-    <View style={{ marginVertical : spacing.xs }}>
+    <View style={{ marginTop : spacing.xs }}>
       <Title title={title} />
-      <Text style={{ fontSize : fontSize.md + 1  , marginVertical : spacing.xs + 2 , color : colors.muted , lineHeight : 21}}>
+      <Text style={{ fontSize : fontSize.md + 1  , marginTop : spacing.xs + 2 , color : colors.muted , lineHeight : 21}}>
         { text }
       </Text>
     </View>

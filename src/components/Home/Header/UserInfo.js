@@ -1,17 +1,20 @@
 import { View, Text , Image , StyleSheet } from 'react-native'
-import React from 'react'
+import React , { useContext } from 'react'
 import { colors, fontSize, spacing } from '../../../utils';
+import { AuthContext } from '../../../store/Auth';
 
 const initialSizeImage = 37 ; 
 
 
 export default function UserInfo() {
+  const { user } = useContext(AuthContext)
+
   return (
     <View style={styles.container}>
-      <Image style={styles.Image} source={require('../../../assets/profile.png')}/>
+      <Image style={styles.Image} source={{ uri : user.avatar }}/>
       <View style={styles.contentInfo}>
-          <Text style={styles.username}>sami.work.scl@gmail.com</Text>
-          <Text style={styles.jobTitle}>Frontend Developer</Text>
+          <Text style={styles.username}>{ user.email }</Text>
+          <Text style={styles.jobTitle}>{ user.jobTitle }</Text>
       </View>
     </View>
   )
